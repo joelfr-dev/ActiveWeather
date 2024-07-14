@@ -1,0 +1,44 @@
+body {
+  background: #87ceeb;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url("./assets/background.webp");
+  background-size: cover;
+}
+
+#weather-container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+.title-container {
+  font-size: 2em;
+  color: #ff4500;
+}
+
+#weather-icon-container {
+  margin: 20px 0;
+}
+
+#weather-icon {
+  width: 100px;
+  height: 100px;
+}
+
+#weather-info {
+  font-size: 1.2em;
+}
+
+#funny-message {
+  font-size: 1em;
+  color: #32cd32;
+  margin-top: 20px;
+}
