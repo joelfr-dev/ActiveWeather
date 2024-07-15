@@ -8,10 +8,7 @@
 
 <h1 align="center">ActiveWeather</h1>
 
-<h3>Erstellt für den Mini-Hackathon by Kevin Chromik </h3>
-<a href="https://www.youtube.com/@KevinChromik">YouTube</a>
-
-<a href="https://joelfr-dev.github.io/ActiveWeather/"> Website</a>
+<h3>Erstellt für den Mini-Hackathon by Kevin Chromik (<a href="https://www.youtube.com/@KevinChromik">YouTube</a>)</h3>
 
 <!-- Status -->
 
@@ -22,6 +19,8 @@
 <hr> -->
 
 <p align="center">
+  
+  <h4><a href="https://joelfr-dev.github.io/ActiveWeather/"> Website</a></h4>
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
@@ -32,14 +31,14 @@
 
 ## :dart: About
 
-Eine coole Wetterapp die das Wetter deines Standorts anzeigen und
-einen Spruch mit einer passenden Empfehlung für das Wetter.
+A cool weather app that displays the weather in your location and
+a saying with a suitable recommendation for the weather.
 
 ## :sparkles: Features
 
-:heavy_check_mark: Die Temperatur anzeigen;\
-:heavy_check_mark: Wetter anzeigen 2;\
-:heavy_check_mark: Einen Spruch anzeigen (Angepasst aufs Wetter, mit Empfehlung für z.B eine Aktvität) 3;
+:heavy_check_mark: Show the temperature (Grad Celsius) 1;\
+:heavy_check_mark: Show the weather (rain, sun etc.) 2;\
+:heavy_check_mark: Display a saying (adapted to the weather, with a recommendation for an activity, for example) 3;
 
 ## :rocket: Technologies
 
