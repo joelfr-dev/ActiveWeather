@@ -2,7 +2,9 @@ let position;
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {
+      enableHighAccuracy: true,
+    });
   } else {
     alert("Geolokalisierung wird von diesem Browser nicht unterstützt.");
   }
@@ -26,7 +28,20 @@ function successCallback(pos) {
 }
 
 function errorCallback(error) {
-  alert("Ein Fehler ist aufgetreten. Fehlercode: " + error.code);
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+      alert("Benutzer hat die Geolokalisierungsanfrage abgelehnt.");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      alert("Standortinformationen sind nicht verfügbar.");
+      break;
+    case error.TIMEOUT:
+      alert("Die Anfrage nach dem Standort ist abgelaufen.");
+      break;
+    case error.UNKNOWN_ERROR:
+      alert("Ein unbekannter Fehler ist aufgetreten.");
+      break;
+  }
 }
 
 function displayWeather(data) {
@@ -49,13 +64,13 @@ function displayWeather(data) {
 
 function getWeatherDescription(code) {
   const descriptionMap = {
-    0: "Klarer Himmel und Sonne",
-    1: "Teilweise bewölkt",
-    2: "Bewölkt",
-    3: "Bedeckt",
-    61: "Leichter Regen",
-    63: "Regen",
-    65: "Starker Regen",
+    0: "klarer Himmel",
+    1: "teilweise bewölkt",
+    2: "bewölkt",
+    3: "bedeckt",
+    61: "leichter Regen",
+    63: "mäßiger Regen",
+    65: "starker Regen",
   };
   return descriptionMap[code] || "unbekanntes Wetter";
 }
@@ -65,7 +80,7 @@ function getWeatherIcon(code) {
     0: "./assets/klarer-himmel.png",
     1: "./assets/t-bewölkt.png",
     2: "./assets/wolke.png",
-    3: "./assets/wolke.png",
+    3: "./assets/bedeckt.png",
     61: "./assets/leichter-regen.png",
     63: "./assets/mittle-regen.png",
     65: "./assets/stark-regen.png",
@@ -91,9 +106,9 @@ function getFunnyMessage(code) {
       "Wolken! Ein gutes Zeichen für Entspannung.",
     ],
     3: [
-      "Ein bisschen Wolken, aber trotzdem schön!",
-      "Vielleicht ein guter Tag für einen Spaziergang.",
-      "Perfektes Wetter für ein Picknick!",
+      "Bedeckt, ein gemütlicher Tag drinnen!",
+      "Wie wäre es mit einem Kaffee und einem Buch?",
+      "Perfekt für einen Filmabend!",
     ],
     61: [
       "Ein bisschen Regen hält uns nicht auf!",
@@ -101,7 +116,7 @@ function getFunnyMessage(code) {
       "Regenjacke an und raus geht's!",
     ],
     63: [
-      "Regen, ideal für einen gemütlichen Tag drinnen.",
+      "Mäßiger Regen, ideal für einen gemütlichen Tag drinnen.",
       "Kuschelige Kleidung an und warmen Tee trinken!",
       "Vielleicht heute die Pflanzen draußen gießen lassen.",
     ],
