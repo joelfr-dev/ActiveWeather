@@ -17,10 +17,12 @@
 </h4>
 
 <hr> -->
+<br>
+<br>
 
 <p align="center">
   
-  <h4><a href="https://joelfr-dev.github.io/ActiveWeather/"> Website</a></h4>
+  <h4><a href="https://joelfr-dev.github.io/ActiveWeather/">Projekt Website</a></h4>
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
