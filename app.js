@@ -55,11 +55,14 @@ function displayWeather(data) {
 
 function getWeatherIcon(code) {
   const iconMap = {
-    0: "./assets/sunny.png",
-    1: "./assets/partly_cloudy.png", // Überwiegend klar
-    2: "./assets/cloudy.png", // Teilweise bewölkt
+    0: "./assets/klarer-himmel.png",
+    1: "./assets/t-bewölkt.png", //
+    2: "./assets/wolke.png",
+    61: "./assets/leichter-regen.png",
+    63: "./assets/mittle-regen.png",
+    65: "./assets/stark-regen.png",
   };
-  return iconMap[code] || "icons/default.png";
+  return iconMap[code] || "./assets/default.png";
 }
 
 getLocation();
