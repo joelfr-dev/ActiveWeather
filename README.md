@@ -8,7 +8,10 @@
 
 <h1 align="center">ActiveWeather</h1>
 
-<a href="https://joelfr-dev.github.io/ActiveWeather/"></a>
+<h3>Erstellt für den Mini-Hackathon by Kevin Chromik </h3>
+<a href="https://www.youtube.com/@KevinChromik">YouTube</a>
+
+<a href="https://joelfr-dev.github.io/ActiveWeather/"> Website</a>
 
 <!-- Status -->
 
@@ -49,7 +52,9 @@ The following tools were used in this project:
 
 ## :memo: License
 
-Made with :heart: by <a href="https://github.com/joelfr-dev" target="_blank">{{Joel Fr}}</a>
+Icons from Flaticon
+
+Made with :heart: by <a href="https://github.com/joelfr-dev" target="_blank">Joel Fr</a>
 
 &#xa0;
 
