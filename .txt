@@ -1,0 +1,17 @@
+
+function errorCallback(error) {
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+      alert("Benutzer hat die Geolokalisierungsanfrage abgelehnt.");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      alert("Standortinformationen sind nicht verfügbar.");
+      break;
+    case error.TIMEOUT:
+      alert("Die Anfrage nach dem Standort ist abgelaufen.");
+      break;
+    case error.UNKNOWN_ERROR:
+      alert("Ein unbekannter Fehler ist aufgetreten.");
+      break;
+  }
+}
