@@ -37,20 +37,26 @@ function displayWeather(data) {
 
   const temperature = data.current_weather.temperature;
   const weatherCode = data.current_weather.weathercode;
+  const weatherDescription = getWeatherDescription(weatherCode);
 
   tempInfo.textContent = `Es sind ${temperature}°C draußen!`;
-  descriptionInfo.textContent = `Wettercode: ${weatherCode}`;
+  descriptionInfo.textContent = weatherDescription;
   weatherIcon.src = getWeatherIcon(weatherCode);
 
-  const funnyMessages = [
-    "Vergiss deinen Sonnenhut nicht!",
-    "Perfektes Wetter für ein Nickerchen!",
-    "Tolles Wetter für einen Spaziergang!",
-    "Trink genug Wasser!",
-    "Zeit, die Sonnenbrille auszupacken!",
-  ];
-  funnyMessage.textContent =
-    funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
+  const funnyMessageText = getFunnyMessage(weatherCode);
+  funnyMessage.textContent = funnyMessageText;
+}
+
+function getWeatherDescription(code) {
+  const descriptionMap = {
+    0: "Klarer Himmel und Sonne",
+    1: "Teilweise bewölkt",
+    2: "Bewölkt",
+    61: "Leichter Regen",
+    63: "Regen",
+    65: "Starker Regen",
+  };
+  return descriptionMap[code] || "unbekanntes Wetter";
 }
 
 function getWeatherIcon(code) {
@@ -63,6 +69,47 @@ function getWeatherIcon(code) {
     65: "./assets/stark-regen.png",
   };
   return iconMap[code] || "./assets/default.png";
+}
+
+function getFunnyMessage(code) {
+  const funnyMessagesMap = {
+    0: [
+      "Perfektes Wetter für eine Sonnenbrille!",
+      "Sonnencreme nicht vergessen!",
+      "Wie wäre es mit einem Eis im Park?",
+    ],
+    1: [
+      "Ein bisschen Wolken, aber trotzdem schön!",
+      "Vielleicht ein guter Tag für einen Spaziergang.",
+      "Perfektes Wetter für ein Picknick!",
+    ],
+    2: [
+      "Ganz schön bewölkt heute, ideal für ein Buch!",
+      "Ein guter Tag, um einen Film zu schauen.",
+      "Wolken! Ein gutes Zeichen für Entspannung.",
+    ],
+    61: [
+      "Ein bisschen Regen hält uns nicht auf!",
+      "Schirm nicht vergessen!",
+      "Regenjacke an und raus geht's!",
+    ],
+    63: [
+      "Regen, ideal für einen gemütlichen Tag drinnen.",
+      "Kuschelige Kleidung an und warmen Tee trinken!",
+      "Vielleicht heute die Pflanzen draußen gießen lassen.",
+    ],
+    65: [
+      "Starker Regen, bleib lieber drinnen!",
+      "Perfektes Wetter für einen Film-Marathon!",
+      "Ein guter Tag, um in der Badewanne zu relaxen.",
+    ],
+  };
+  const defaultMessages = ["Mach das Beste aus dem Tag!"];
+  return (funnyMessagesMap[code] || defaultMessages)[
+    Math.floor(
+      Math.random() * (funnyMessagesMap[code] || defaultMessages).length
+    )
+  ];
 }
 
 getLocation();
