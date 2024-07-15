@@ -52,6 +52,7 @@ function getWeatherDescription(code) {
     0: "Klarer Himmel und Sonne",
     1: "Teilweise bewölkt",
     2: "Bewölkt",
+    3: "Bedeckt",
     61: "Leichter Regen",
     63: "Regen",
     65: "Starker Regen",
@@ -62,8 +63,9 @@ function getWeatherDescription(code) {
 function getWeatherIcon(code) {
   const iconMap = {
     0: "./assets/klarer-himmel.png",
-    1: "./assets/t-bewölkt.png", //
+    1: "./assets/t-bewölkt.png",
     2: "./assets/wolke.png",
+    3: "./assets/wolke.png",
     61: "./assets/leichter-regen.png",
     63: "./assets/mittle-regen.png",
     65: "./assets/stark-regen.png",
@@ -87,6 +89,11 @@ function getFunnyMessage(code) {
       "Ganz schön bewölkt heute, ideal für ein Buch!",
       "Ein guter Tag, um einen Film zu schauen.",
       "Wolken! Ein gutes Zeichen für Entspannung.",
+    ],
+    3: [
+      "Ein bisschen Wolken, aber trotzdem schön!",
+      "Vielleicht ein guter Tag für einen Spaziergang.",
+      "Perfektes Wetter für ein Picknick!",
     ],
     61: [
       "Ein bisschen Regen hält uns nicht auf!",
